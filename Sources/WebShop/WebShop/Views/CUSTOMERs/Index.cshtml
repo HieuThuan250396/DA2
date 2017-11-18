@@ -1,0 +1,106 @@
+﻿@using WebShop.Models;
+@model IndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutUser.cshtml";
+}
+
+<h2>Customer</h2>
+
+<<p>
+    @Html.ActionLink("Create New", "Create")
+    @using (Html.BeginForm())
+    {
+        <div class="form-group label-floating is-empty">
+            <label class="control-label">Customer Name</label>
+            <div class="col-md-10">
+                @Html.Editor("txtFilter", "", new { htmlAttributes = new { @class = "form-control" } })
+                <input type="submit" value="" id="search" />
+            </div>
+        </div>
+        <div class="col-md-10">
+            @Html.ActionLink("Hiện tất cả", "ClearAll", "CUSTOMERs")
+        </div>
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Customer Name
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+            Fax
+        </th>
+        <th>
+            Email
+        </th>
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.dsKH)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUSTNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ADDRESS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHONE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FAX)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CUSTID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CUSTID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CUSTID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@if (Model.Pager.EndPage > 1)
+{
+    <ul class="pagination pagination-primary">
+        @if (Model.Pager.CurrentPage > 1)
+        {
+            <li>
+                <a href="~/CUSTOMERs/Index">First</a>
+            </li>
+            <li>
+                <a href="~/CUSTOMERs/Index?page=@(Model.Pager.CurrentPage - 1)">Previous</a>
+            </li>
+        }
+        @for (var pager = Model.Pager.StartPage; pager <= Model.Pager.TotalPages; pager++)
+        {
+            <li class="@(pager == Model.Pager.CurrentPage ?  "active" : "")">
+                <a href="~/CUSTOMERs/Index?page=@pager">@pager</a>
+            </li>
+        }
+        @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+        {
+            <li>
+                <a href="~/CUSTOMERs/Index?page=@(Model.Pager.CurrentPage + 1)">Next</a>
+            </li>
+            <li>
+                <a href="~/CUSTOMERs/Index?page=@(Model.Pager.TotalPages)">Last</a>
+            </li>
+        }
+    </ul>
+}

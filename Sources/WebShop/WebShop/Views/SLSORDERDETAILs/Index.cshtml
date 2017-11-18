@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebShop.Models.Db.SLSORDERDETAIL>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutUser.cshtml";
+}
+
+<h2>Sales Order Detail</h2>
+
+<p>
+    @Html.ActionLink("Back To List", "Index", "SALESORDERs")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Inventory Name
+        </th>
+        <th>
+            Customer ID
+        </th>
+        <th>
+            Qty
+        </th>
+        <th>
+            Amount
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.INVENTORY.INVTNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SALESORDER.CUSTID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QTY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AMOUNT)
+            </td>
+
+        </tr>
+    }
+
+</table>
+

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebShop.Models.Db.PURCHASEORDER>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutUser.cshtml";
+}
+
+<h2>Purchase Order</h2>
+
+<p>
+    @Html.ActionLink("Create New", "InsertOrder")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Vendor
+        </th>
+        <th>
+            Order Date
+        </th>
+        <th>
+            Total Amount
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VENDOR.VENDORNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ORDERDATE)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.TOTALAMT)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Index", "PURCHASEORDDETAILs", new { id = item.ORDERNOP }, null)
+            </td>
+        </tr>
+    }
+
+</table>

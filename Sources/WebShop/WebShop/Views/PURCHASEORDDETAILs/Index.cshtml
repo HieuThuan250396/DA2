@@ -1,0 +1,54 @@
+﻿@model IEnumerable<WebShop.Models.Db.PURCHASEORDDETAIL>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutUser.cshtml";
+}
+
+<h2>Purchase Order Detail</h2>
+
+<p>
+    @Html.ActionLink("Back To List", "Index", "PURCHASEORDERs")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Inventory Name
+        </th>
+        <th>
+            Vendor ID
+        </th>
+        <th>
+            Qty
+        </th>
+        <th>
+            Purchase Price
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.INVENTORY.INVTNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PURCHASEORDER.VENDORID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QTY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PURCHASEPRICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AMOUNT)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

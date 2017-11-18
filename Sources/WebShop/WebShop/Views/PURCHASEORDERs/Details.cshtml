@@ -1,0 +1,46 @@
+﻿@model WebShop.Models.Db.PURCHASEORDER
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_LayoutUser.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Purchase Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Vendor:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VENDOR.VENDORNAME)
+        </dd>
+
+        <dt>
+            Order Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDERDATE)
+        </dd>
+
+        <dt>
+            Total Amount:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TOTALAMT)
+        </dd>
+
+        <dt>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ORDERNOP }) |
+            @Html.ActionLink("Back to List", "Index")
+        </dt>
+    </dl>
+</div>
+<p>
+
+</p>

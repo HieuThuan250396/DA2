@@ -1,0 +1,67 @@
+﻿@model WebShop.Models.Db.PAYMENT
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_LayoutUser.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PAYMENT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SALESORDER.CUSTID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SALESORDER.CUSTID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STAFF.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STAFF.NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PAYMENTNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PAYMENTNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PAYMENTDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PAYMENTDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PAYMENTAMT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PAYMENTAMT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESCRIPTION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPTION)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PAYMENTID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

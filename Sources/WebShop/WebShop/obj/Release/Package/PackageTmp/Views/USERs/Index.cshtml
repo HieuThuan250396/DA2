@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebShop.Models.Db.USER>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutUser.cshtml";
+}
+
+<h2>User</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            User name
+        </th>
+        <th>
+            Roles
+        </th>
+        <th>
+            Pass
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.USERID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ROLES)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PASS)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.USERID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.USERID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.USERID })
+            </td>
+        </tr>
+    }
+
+</table>

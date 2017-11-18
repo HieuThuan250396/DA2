@@ -1,0 +1,59 @@
+﻿@model WebShop.Models.Db.SALESORDER
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_LayoutUser.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sales Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Customer Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSTOMER.CUSTNAME)
+        </dd>
+
+        
+
+        <dt>
+            Order Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDERDATE)
+        </dd>
+
+        
+
+        <dt>
+            Total Amount:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TOTALAMT)
+        </dd>
+
+        
+
+        <dt>
+            Description
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESCRIPTION)
+        </dd>
+
+        <dt>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ORDERNO }) |
+            @Html.ActionLink("Back to List", "Index")
+        </dt>
+
+    </dl>
+</div>
+

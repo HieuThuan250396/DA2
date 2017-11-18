@@ -1,0 +1,94 @@
+﻿@model WebShop.Models.Db.INVENTORY
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/_LayoutUser.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm("Edit", "INVENTORies", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Inventory</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.INVTID)
+
+        <div class="form-group label-floating is-empty">
+            <label class="control-label">Image</label>
+            <div class="col-md-10">
+                <input type="file" name="fileUpload" />
+
+                @*thong bao trung*@
+                @ViewBag.Thongbao
+            </div>
+        </div>
+
+        <div class="form-group label-floating is-empty">
+            <label class="control-label">Unit Name</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UNITNAME, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UNITNAME, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group label-floating is-empty">
+            <label class="control-label">Inventory Name</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.INVTNAME, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.INVTNAME, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group label-floating is-empty">
+            <label class="control-label">Sales Price</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SALESPRICE, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SALESPRICE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group label-floating is-empty">
+            <label class="control-label">Qty Stock</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.QTYSTOCK, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.QTYSTOCK, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group label-floating is-empty">
+            <label class="control-label">Sells Tax</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SLSTAX, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SLSTAX, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group label-floating is-empty">
+            <label class="control-label">Descriptions</label>
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.DESCRIPTION, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DESCRIPTION, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+      
+        <div class="form-group label-floating is-empty">
+            <div class="col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

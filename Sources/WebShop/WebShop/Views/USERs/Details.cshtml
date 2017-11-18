@@ -1,0 +1,43 @@
+﻿@model WebShop.Models.Db.USER
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_LayoutUser.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            User Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USERID)
+        </dd>
+
+        <dt>
+            Roles:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ROLES)
+        </dd>
+
+        <dt>
+            Pass:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PASS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.USERID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

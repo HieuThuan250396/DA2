@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="dbWebShop-Web.config Connection String" description="dbWebShop Connection String used in web.config by the application to access the database." defaultValue="data source=mssql6.gear.host;initial catalog=dbwebshop;persist security info=True;user id=dbwebshop;password=Cl15K_~tuhx2;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\DA2\\WebShop\\WebShop\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='dbWebShop']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&hearts;Group Đồ án 1 Ahihi &clubs; &hearts;</title>
+    <!-- BOOTSTRAP STYLES-->
+    <link href="~/NewContents/bootstrap.min.css" rel="stylesheet" />
+    <!-- BOOTSTRAP STYLES-->
+    <link href="~/NewContents/material-kit.css" rel="stylesheet" />
+    <link href="~/NewContents/demo.css" rel="stylesheet" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+
+    <!-- CUSTOM STYLES-->
+    <link href="~/Content/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <script src="~/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script src="~/tinymce/js/tinymce/jquery.tinymce.min.js"></script>
+    <script>tinymce.init({ forced_root_block: "", selector: '#DESCRIPTION' });</script>
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-primary">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-primary">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-header">
+                        <div class="logo-container">
+                            <div class="logo">
+                                <img src="~/Img/logo.png" alt="Hiệu bánh ahihi" rel="tooltip" title="" data-placement="bottom" data-html="true" data-original-title="<b>Team bán bánh</b> Xin giới thiệu website bán bánh nè  <b>Ahihi <3 <3 </b>">
+                            </div>
+                            <div class="brand">
+                                Team bán bánh
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="collapse navbar-collapse" id="example-navbar-primary">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active">
+                            @if (Session["LoginNameNV"] != null)
+                            {
+                                <a href="~/Staff">
+                                    <img src="~/Img/administrator-16.png" alt="User Infomation">
+                                    <i class="material-icons">@Session["LoginNameNV"]</i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="~/Account/LogOn">
+                                    <img src="~/Img/account-login-16.png" alt="LogIn">
+                                    <i class="material-icons">LogIn</i>
+                                </a>
+                            }
+                        </li>
+                        <li>
+                            @if (Session["LoginNameNV"] != null)
+                            {
+                                <a href="~/Account/LogOut">
+                                    <img src="~/Img/account-logout-16.png" alt="User Infomation">
+                                    <i class="material-icons">LogOut</i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="~/USERs/Create">
+                                    <img src="~/Img/windows.png" alt="LogIn">
+                                    <i class="material-icons">SignUp</i>
+                                </a>
+                            }
+                        </li>   
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- /. NAV TOP  -->
+
+        <nav class="navbar navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li class="text-center">
+                        <img src="~/Img/cake5.jpg" class="user-image img-responsive" />
+                    </li>
+
+
+                    <li>
+                        <a class="active" href="~/MainPage/Index"><i class="fa fa-dashboard fa-3x"></i> MainPage</a>
+                    </li>
+                    <li>
+                        <a href="~/STAFFs/Index"><i class="fa fa-desktop fa-3x"></i>Staff Management</a>
+                    </li>
+                    <li>
+                        <a href="~/CUSTOMERs/Index"><i class="fa fa-qrcode fa-3x"></i>Customer Management</a>
+                    </li>
+                    <li>
+                        <a href="~/INVENTORies/Index"><i class="fa fa-bar-chart-o fa-3x"></i>Inventories Management</a>
+                    </li>
+                    <li>
+                        <a href="~/SALESORDERs/Index"><i class="fa fa-table fa-3x"></i> Sales Order</a>
+                    </li>
+                    <li>
+                        <a href="~/PURCHASEORDERs/Index"><i class="fa fa-edit fa-3x"></i> Purchase Order </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            @RenderBody()
+            <img src="" />
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="~/Scripts/jquery.metisMenu.js"></script>
+    <!-- MORRIS CHART SCRIPTS -->
+    <script src="~/Scripts/morris/raphael-2.1.0.min.js"></script>
+    <script src="~/Scripts/morris/morris.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="~/Scripts/custom.js"></script>
+
+    <script src="~/NewScripts/jquery.min.js" type="text/javascript"></script>
+    <script src="~/NewScripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/NewScripts/material.min.js"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="~/NewScripts/nouislider.min.js" type="text/javascript"></script>
+    <!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
+    <script src="~/NewScripts/bootstrap-datepicker.js" type="text/javascript"></script>
+    <!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
+    <script src="~/NewScripts/material-kit.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+		$().ready(function(){
+			// the body of this function is in assets/material-kit.js
+			materialKit.initSliders();
+            window_width = $(window).width();
+
+            if (window_width >= 992){
+                big_image = $('.wrapper > .header');
+
+				$(window).on('scroll', materialKitDemo.checkScrollForParallax);
+			}
+
+		});
+    </script>
+</body>
+
+</html>
