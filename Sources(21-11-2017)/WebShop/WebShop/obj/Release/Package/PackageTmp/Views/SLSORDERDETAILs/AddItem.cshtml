@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WebShop.Models.Db.SLSORDERDETAIL>
+@{
+    var orderNo = ViewData["OrderNo"];
+}
+
+<p>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @Html.ActionLink("Add Item", "Create", new { OrderNo = orderNo })
+        </div>
+    </div>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Inventory Name
+        </th>
+        <th>
+            Customer ID
+        </th>
+        <th>
+            Qty
+        </th>
+        <th>
+            Sales Price
+        </th>
+        <th>
+            Amount
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.INVENTORY.INVTNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SALESORDER.CUSTID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QTY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SALESPRICE)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.AMOUNT)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", "INVENTORies", new { id = item.INVENTORY.INVTID }, null) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+

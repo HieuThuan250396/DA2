@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebShop.Models.Db.SALESORDER>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutUser.cshtml";
+}
+
+<h2>Sales Order</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Total Amount
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUSTOMER.CUSTNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ORDERDATE)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.TOTALAMT)
+            </td>
+
+            
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ORDERNO }) |
+                @Html.ActionLink("Details", "Index", "SLSORDERDETAILs", new { id = item.ORDERNO }, null) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ORDERNO })
+            </td>
+        </tr>
+    }
+
+</table>

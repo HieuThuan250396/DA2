@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebShop.Models.Db.PAYMENT>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutUser.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SALESORDER.CUSTID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STAFF.NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAYMENTNO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAYMENTDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAYMENTAMT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRIPTION)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SALESORDER.CUSTID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STAFF.NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAYMENTNO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAYMENTDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAYMENTAMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRIPTION)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PAYMENTID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PAYMENTID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PAYMENTID })
+        </td>
+    </tr>
+}
+
+</table>

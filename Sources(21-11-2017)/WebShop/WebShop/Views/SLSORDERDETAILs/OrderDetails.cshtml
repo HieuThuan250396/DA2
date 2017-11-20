@@ -1,0 +1,43 @@
+﻿@model WebShop.Models.Db.SALESORDER
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_LayoutUser.cshtml";
+    var amount = ViewData["Amount"];
+}
+
+<h2>Details</h2>
+<div>
+    <h4>Sale Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Customer Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSTOMER.CUSTNAME)
+        </dd>
+
+        <dt>
+            Order Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDERDATE)
+        </dd>
+        <dt>
+            Total Amount:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TOTALAMT)
+        </dd>
+
+
+
+    </dl>
+</div>
+@{ Html.RenderAction("AddItem", "SLSORDERDETAILs", new { OrderNo = Model.ORDERNO }); }
+@Html.ActionLink("Back To List", "Index", "SALESORDERs")
+
+

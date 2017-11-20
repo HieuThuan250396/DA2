@@ -1,0 +1,63 @@
+﻿@model WebShop.Models.Db.PURCHASEORDDETAIL
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_LayoutUser.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PURCHASEORDDETAIL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Inventory Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INVENTORY.INVTNAME)
+        </dd>
+
+        <dt>
+            Vendor ID:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PURCHASEORDER.VENDORID)
+        </dd>
+
+        <dt>
+            Stock:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STOCK.STOCKNAME)
+        </dd>
+
+        <dt>
+            Qty:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QTY)
+        </dd>
+
+        <dt>
+            Purchase Price:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PURCHASEPRICE)
+        </dd>
+
+
+        <dt>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </dt>
+    </dl>
+</div>
+<p>
+
+</p>
