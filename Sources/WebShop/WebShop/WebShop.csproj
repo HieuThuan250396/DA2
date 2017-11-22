@@ -372,8 +372,8 @@
     <Compile Include="Models\Db\CATEGORY.cs" />
     <Compile Include="Models\Db\CUSTOMER.cs" />
     <Compile Include="Models\Db\C__MigrationHistory.cs" />
-    <Compile Include="Models\Db\INVENTORY.cs" />
     <Compile Include="Models\Db\dbWebShop.cs" />
+    <Compile Include="Models\Db\INVENTORY.cs" />
     <Compile Include="Models\Db\PAYMENT.cs" />
     <Compile Include="Models\Db\PURCHASEORDDETAIL.cs" />
     <Compile Include="Models\Db\PURCHASEORDER.cs" />
